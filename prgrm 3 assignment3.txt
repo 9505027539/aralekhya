@@ -1,0 +1,109 @@
+package abcd;
+
+public class customer {
+  static String name;
+  static int id;
+  static char gender;
+   static int discount;
+	public customer(int id, String name, int discount )
+	{
+	super();
+		this.gender = gender;
+		this.discount = discount;
+		this.id =id;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getId() {
+		return id;
+	}
+	public char getGender() {
+		return gender;
+	}
+    public String tostring() {
+    	return "customername:"+name+ "customerid:"+id;
+    }
+    }
+
+package abcd;
+import java.lang.Math;
+public class account extends customer
+{
+	int aid;
+	double balance=0.0;
+	public account( ) 
+	{
+	super(id, name, gender);
+		this.balance=balance;
+
+	}
+	public double getBalance() 
+	{
+		return balance;
+	}
+	public void setBalance(double balance) 
+	{
+		this.balance = balance;
+	}
+	public int getAid() 
+	{
+		return aid;
+	}
+	public void credit(double amount)
+	{
+		balance = balance+amount;
+		System.out.println("After credit:");
+	}
+	public void withdraw(double amount)
+	{
+		if(balance>=amount)
+		{
+			balance=balance-amount;
+			System.out.println("After withdraw:");
+		}
+		else
+		{
+			System.out.println("amount withdrawn exceeds the current balance!");
+		}
+	}
+	@Override
+	public String toString()
+	{
+		return String.format("%.2f", balance);
+	}
+	
+	
+}
+
+
+
+package abcd;
+
+public class account2 {
+	
+
+		public static void main(String[] args) 
+		{
+			customer c=new customer(1,"alekhya",20);
+			System.out.println(c);
+			account a=new account();
+			a.setBalance(890.367788);
+			a.credit(2000.3789);
+			System.out.println(a);
+			a.withdraw(899.2898);
+			System.out.println(a);
+
+		}
+
+	}
+
+
+output:
+2890.75
+After withdraw:
+1991.46
+
+
+
+
