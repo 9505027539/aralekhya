@@ -1,0 +1,87 @@
+package book;
+
+	public class author {
+		static String name;
+		static String email;
+		static char gender;
+		 public  author(String name ,String email ,char gender) {
+		 this.name = name;
+		 this.gender = gender;
+		 this.email = email;
+		 }
+		public String getName() {
+			return name;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public char getCh() {
+			return gender;
+		}
+		public String toString() {
+		  return "authorname:"+name+ "authoremail:"+email+"authorgender:"+gender;	
+		}
+		}
+package book;
+
+public class book  extends author {
+	private String bname;
+	private double price;
+	private int qty=0;
+	public book(String bname)
+	{
+	super(name,email,gender);
+		this.bname= bname;
+	}
+	public String getbName() {
+		return bname;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public int getqty() {
+		return qty;
+	}
+	public void setqty(int qty) {
+		this.qty = qty;
+	}
+	
+	public String tostring() {
+		return  "Bookname: "+bname+ " Bookprice: "+price+ " Bookqty: "+qty;
+	}
+}
+	
+	
+package book;
+
+public class method {
+	public static void main (String args[]) {
+		
+		author a =new author("alekhya","alekhya.arvapalli@gmail.com",'f');
+		System.out.println(a);
+		book b= new book("destiny");
+		b.setPrice(200);
+		b.setqty(1);
+		System.out.println(b);
+		
+	}
+
+}
+
+
+
+output:
+authorname:alekhyaauthoremail:alekhya.arvapalli@gmail.comauthorgender:f
+authorname:alekhyaauthoremail:alekhya.arvapalli@gmail.comauthorgender:f
+
+
+
+
+
+
