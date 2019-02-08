@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class account2 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a1,a2,a3,res,res2,res3;
+		Scanner get = new Scanner(System.in);
+		account ac=new account();
+		System.out.println("enter id:");
+		String id = get.nextLine();
+		System.out.println("enter name:");
+		String name=get.nextLine();
+		System.out.println("enter amout to credit:");
+		a1 = get.nextInt();
+		System.out.println("enter amout to debit:");
+		a2 = get.nextInt();
+		System.out.println("enter amout to transfer:");
+		a3 = get.nextInt();
+		res = ac.credit(a1);
+		System.out.println("after credited:" + res);
+		res2 = ac.debit(a2);
+		System.out.println("after debited:" + res2);
+		res3 = ac.transfer(a3);
+		System.out.println("after transfer:" + res3);
+	}
+
+}
+package ac;
+import java.util.Scanner;
+public class ac2 {
+	public static void main(String[] args) {
+		int a1,a2,a3,res,res2,res3;
+		Scanner get = new Scanner(System.in);
+		ac a=new ac();
+		System.out.println("enter id:");
+		String id = get.nextLine();
+		System.out.println("enter name:");
+		String name=get.nextLine();
+		System.out.println("enter amout to credit:");
+		a1 = get.nextInt();
+		System.out.println("enter amout to debit:");
+		a2 = get.nextInt();
+		System.out.println("enter amout to transfer:");
+		a3 = get.nextInt();
+		res = a.credit(a1);
+		System.out.println("after credited:" + res);
+		res2 = a.debit(a2);
+		System.out.println("after debited:" + res2);
+		res3 = a.transfer(a3);
+		System.out.println("after transfer:" + res3);
+	}
+
+	  
+}
+	
