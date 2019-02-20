@@ -1,0 +1,28 @@
+package lambdaass5;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class list {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<String> list = Arrays.asList("madhu", "alekhya", "sony", "lokesh", "kavi", "lucky");
+
+		String result = list.stream().map(s -> Character.toString(s.charAt(0))).reduce("", (a, b) -> a + b);
+
+		System.out.println(result);
+	}
+
+}
+
+
+
+
+
+output:
+
+
+maslkl

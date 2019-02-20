@@ -1,0 +1,41 @@
+
+
+package lambdaass;
+@FunctionalInterface
+public interface basics{
+	int operations(int a, int b);
+}
+
+
+package lambdaass;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		basics add = (a,b)->a+b;
+		System.out.println("addition is :"+add.operations(12, 13));
+		
+		basics subtract = (a,b)->a-b;
+		System.out.println("subraction is :"+subtract.operations(12,2 ));
+		
+		basics multiply= (a,b)->a*b;
+		System.out.println("multiplication  is :"+multiply.operations(13, 3));
+		
+		basics divide = (a,b)->a/b;
+		System.out.println("division  is :"+divide.operations(8, 3));
+		
+
+		
+
+	}
+
+}
+ 
+
+output:
+
+
+addition is :25
+subraction is :10
+multiplication  is :39
+division  is :2

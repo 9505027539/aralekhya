@@ -1,0 +1,42 @@
+package lamdaass4;
+
+import java.util.ArrayList;
+
+public class list {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("alekhya");
+		list.add("madhukar");
+		list.add("sony");
+		list.add("lokesh");
+		list.add("kavi");
+System.out.println("list before reomving odd words");
+list.forEach(System.out::println);
+System.out.println();
+list.removeIf(e->e.length()%2!=0);
+System.out.println("list after reomving odd words");
+list.forEach(System.out::println);
+
+
+	}
+
+}
+
+
+
+
+
+output:
+
+sony
+lokesh
+kavi
+
+list after reomving odd words
+madhukar
+sony
+lokesh
+kavi

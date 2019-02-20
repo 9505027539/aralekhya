@@ -1,0 +1,125 @@
+package streamsass;
+
+public class fruit3 {
+	String Name;
+	int  calories;
+	int price;
+	String Colour;
+	public fruit3(String name, int calories, int price, String colour) {
+		super();
+		Name = name;
+		this.calories = calories;
+		this.price = price;
+		Colour = colour;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public int getCalories() {
+		return calories;
+	}
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public String getColour() {
+		return Colour;
+	}
+	public void setColour(String colour) {
+		Colour = colour;
+	}
+	@Override
+	public String toString() {
+		return "fruit [Name=" + Name + ", calories=" + calories + ", price=" + price + ", Colour=" + Colour + "]";
+	}
+	
+	
+	
+}
+
+
+
+package streamsass;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class fruit3main {
+
+	public static void main(String[] args) {
+		List<fruit> list=new ArrayList<>();
+		list.add(new fruit("promaganate",150,100,"red"));
+		list.add(new fruit("Banana",40,30,"Yellow"));
+		list.add(new fruit("Apple",70,50,"Red"));
+		list.add(new fruit("Watermelon",200,80,"red"));
+		list.add(new fruit("Grapes",120,70,"Green"));
+		list.add(new fruit("orange",30,100,"orange"));
+		list.add(new fruit("mango",10,80,"yellow"));
+		list.add(new fruit("cherry",10,10,"red"));
+		
+		
+
+		System.out.println("------------------------------------------");
+		List<fruit> names3=list.stream()
+				.sorted(Comparator.comparing(fruit::getColour))
+				.collect(Collectors.toList());
+		names3.forEach(e->System.out.println("Fruit is: "+e.getName()+" with color: "+e.getColour()));
+		
+		
+}
+	
+	
+		// TODO Auto-generated method stub
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+output:
+
+
+
+
+
+
+
+Fruit is: Grapes with color: Green
+Fruit is: Apple with color: Red
+Fruit is: Banana with color: Yellow
+Fruit is: orange with color: orange
+Fruit is: promaganate with color: red
+Fruit is: Watermelon with color: red
+Fruit is: cherry with color: red
+Fruit is: mango with color: yellow
+
+
+
+
+
+
+
+
+
+
+
+
+
+

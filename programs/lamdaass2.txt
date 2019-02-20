@@ -1,0 +1,39 @@
+package lambdaass2;
+@FunctionalInterface
+public interface order {
+	void perform(int price, String status) ;
+	}
+
+
+package lambdaass2;
+
+public class ordermain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		order o =(a,b)->{
+			if(a>10000) {
+				System.out.println("order price is :" +a+  "Status is "+b);
+			}
+				
+			};
+			o.perform(60000, "accpected");
+			o.perform(4000000, "declined");
+			o.perform(900000, "accpected");
+			o.perform(6000, "completed");
+
+	}
+
+}
+   
+
+
+output:
+
+
+order price is :60000Status is accpected
+order price is :4000000Status is declined
+order price is :900000Status is accpected

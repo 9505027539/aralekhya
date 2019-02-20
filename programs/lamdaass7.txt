@@ -1,0 +1,31 @@
+package lambdaass7;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class map {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Map<String, Integer> map = new TreeMap<>();
+		map.put("c", 1);
+		map.put("b", 8);
+		map.put("a", 9);
+		StringBuilder builder = new StringBuilder();
+		map.forEach((key, value) -> builder.append(key + value));
+
+		System.out.println(builder.toString());
+
+	}
+
+}
+
+
+
+
+output:
+
+
+
+a9b8c1
