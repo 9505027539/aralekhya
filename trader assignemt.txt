@@ -1,0 +1,136 @@
+public class Trader {
+	
+	String Name;
+	String city;
+	public Trader(String name, String city) {
+		super();
+		Name = name;
+		this.city = city;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	@Override
+	public String toString() {
+		return "Trader [Name=" + Name + ", city=" + city + "]";
+	}
+	
+
+}
+
+
+
+package streamsass;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Tradermain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		List<Trader> list=new ArrayList<>();
+		list.add(new Trader("alekhya", "Pune"));
+		list.add(new Trader("madhu","Hyderabad"));
+		list.add(new Trader("sony", "Indore"));
+		list.add(new Trader("lokesh", "Pune"));
+		list.add(new Trader("atal", "Indore"));
+		list.add(new Trader("kavi", "Bangalore"));
+		list.add(new Trader("anusha", "Pune"));
+		list.add(new Trader("sneha", "Indore"));
+		list.add(new Trader("anitha", "Pune"));
+		list.add(new Trader("pranathi", "Indore"));
+		
+		
+		System.out.println("Unique Cities are>>>>>");
+		List<String> names2=list.stream()
+				.map(Trader::getCity)
+				.distinct()
+				.collect(Collectors.toList());
+		names2.forEach(System.out::println);
+		
+		List<Trader> names=list.stream()
+				.filter(p->p.getCity()=="Pune")
+				.sorted(Comparator.comparing(Trader::getName))
+				.collect(Collectors.toList());
+		names.forEach(System.out::println);
+		
+		System.out.println("Traders names are>>>>>");
+		List<Trader> names4=list.stream()
+				.sorted(Comparator.comparing(Trader::getName))
+				.collect(Collectors.toList());
+		String S=names4.stream()
+				.map(Trader::getName)
+				.collect(Collectors.joining(", "));
+		System.out.println(S);
+		
+		System.out.println("Traders based in Indore are_>>>>>");
+		List<String> names3=list.stream()
+				.filter(p->p.getCity()=="Indore")
+				.map(Trader::getName)
+				.collect(Collectors.toList());
+		names3.forEach(System.out::println);
+		
+		
+
+	}
+
+}
+
+
+
+
+
+
+
+
+output:
+
+
+Unique Cities are>>>>>
+Pune
+Hyderabad
+Indore
+Bangalore
+Trader [Name=alekhya, city=Pune]
+Trader [Name=anitha, city=Pune]
+Trader [Name=anusha, city=Pune]
+Trader [Name=lokesh, city=Pune]
+Traders names are>>>>>
+alekhya, anitha, anusha, atal, kavi, lokesh, madhu, pranathi, sneha, sony
+Traders based in Indore are_>>>>>
+sony
+atal
+sneha
+pranathi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
